@@ -1,6 +1,9 @@
 # timer
 The `timer` module provides a context-aware Sleep function for Go applications.
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/goaux/timer.svg)](https://pkg.go.dev/github.com/goaux/timer)
+[![Go Report Card](https://goreportcard.com/badge/github.com/goaux/timer)](https://goreportcard.com/report/github.com/goaux/timer)
+
 ## Installation
 
 To install the `timer` module, use the following command:
