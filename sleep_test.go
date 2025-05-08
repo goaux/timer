@@ -15,7 +15,7 @@ func Example() {
 
 	// Try to sleep for 1 second
 	fmt.Println("Starting sleep for 1 second")
-	err := timer.Sleep(ctx, 1*time.Second)
+	err := timer.SleepCause(ctx, 1*time.Second)
 	if err != nil {
 		fmt.Printf("Sleep interrupted: %v\n", err)
 	} else {
