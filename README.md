@@ -33,7 +33,7 @@ Here's a basic example of how to use the `Sleep` function:
         fmt.Println("Starting sleep for 10 seconds. Press Ctrl+C to interrupt.")
 
         // Try to sleep for 10 seconds
-        err := timer.Sleep(ctx, 10*time.Second)
+        err := timer.SleepCause(ctx, 10*time.Second)
 
         if err != nil {
             fmt.Printf("Sleep interrupted: %v\n", err)
@@ -50,8 +50,16 @@ Here's a basic example of how to use the `Sleep` function:
 
 ## Function
 
+### SleepCause
+
+    func SleepCause(ctx context.Context, d time.Duration) error
+
+`SleepCause` pauses the current goroutine for the specified duration or until the context is canceled.
+It returns `nil` if the sleep completes normally, or the cause of the context cancellation (as returned by `context.Cause`) if canceled.
+
 ### Sleep
 
     func Sleep(ctx context.Context, d time.Duration) error
 
-`Sleep` pauses the current goroutine for the specified duration or until the context is canceled. It returns `nil` if the sleep completes normally, or the context's error if the context is canceled before the duration elapses.
+`Sleep` pauses the current goroutine for the specified duration or until the context is canceled.
+It returns `nil` if the sleep completes normally, or the context's error if the context is canceled before the duration elapses.
